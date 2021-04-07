@@ -1,4 +1,4 @@
-# Comprehensive Biomedical Knowledge Hub (CBKH)
+# Cornell Biomedical Knowledge Hub (CBKH)
 CBKG integrates data from 15 publicly available biomedical databases. The current version of CBKG contains a total of 2,231,297 entities of 6 types. Specifically, the CBKG includes 22,963 anatomy entities, 18,503 disease entities, 36,436 drug entities, 87,942 gene entities, 2,065,015 molecule entities and 438 symptom entities. For the relationships in the CBKG (Table 3), there are 91 relation types within 8 kinds of entity pairs, including Anatomy-Gene, Drug-Disease, Drug-Drug, Drug-Gene, Disease-Disease, Disease-Gene, Disease-Symptom and Gene-Gene. In total, CBKG contains 48,678,651 relations.
 
 ![Schema](KG_Schema.png)
