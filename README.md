@@ -39,3 +39,9 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 
 ## Licence
 The data of CBKG is licensed under the [MIT License](https://github.com/houyurain/CBKH/blob/main/LICENSE). The CBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/houyurain/CBKH/blob/main/Source%20Information/README.md)). 
+
+## Cite
+```
+Su, Chang, Yu Hou, Winston Guo, Fayzan Chaudhry, Gregory Ghahramani, Haotan Zhang, and Fei Wang. "CBKH: The Cornell Biomedical Knowledge Hub." medRxiv (2021).
+```
+
