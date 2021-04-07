@@ -42,6 +42,13 @@ The data of CBKG is licensed under the [MIT License](https://github.com/houyurai
 
 ## Cite
 ```
-Su, Chang, Yu Hou, Winston Guo, Fayzan Chaudhry, Gregory Ghahramani, Haotan Zhang, and Fei Wang. "CBKH: The Cornell Biomedical Knowledge Hub." medRxiv (2021).
+@article{su2021cbkh,
+  title={CBKH: The Cornell Biomedical Knowledge Hub},
+  author={Su, Chang and Hou, Yu and Guo, Winston and Chaudhry, Fayzan and Ghahramani, Gregory and Zhang, Haotan and Wang, Fei},
+  journal={medRxiv},
+  year={2021},
+  publisher={Cold Spring Harbor Laboratory Press}，
+  url = {https://www.medrxiv.org/content/10.1101/2021.03.12.21253461v1}
+}
 ```
 
