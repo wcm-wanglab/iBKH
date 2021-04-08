@@ -20,5 +20,6 @@ When you unzip the file, you will get the following .csv files.
 ## CBKH entities vocabulary
 Each row in the CBKH entity vocabulary describes an entity, and each column in this row records the entity's information in different source databases (such as original ID, name, etc.). For example,
 | primary | do_id | do_name | kegg_id | kegg_name | pharmgkb_id | pharmgkb_name | umls_cui | mesh_id | ... |
+| --- |:--- :|: --- :|: --- :|: --- :|: --- :|: --- :|: --- :|: --- :|: --- :|
 | DOID:0001816 | 0001816 | angiosarcoma | H01666 | Angiosarcoma | PA444390 | Hemangiosarcoma | C0018923 | D006394 | ... |
 | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
