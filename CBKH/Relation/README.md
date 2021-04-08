@@ -23,7 +23,7 @@ When you unzip the file, you will get the following .csv files.
 ```
 
 ## CBKH relations
-Each row in the CBKH relationship describes the relationship between a pair of entities. We kept all the relationship types from the source database in the CBKH relations tables, and binary representation exists/non-existence. 1 indicates that the relationship exists between the entity pairs, and 0 indicates that the relationship does not exist. For example,
+Each row in the CBKH relationship describes the relationship between a pair of entities. We kept all the relationship types from the source database in the CBKH relations tables, and use binary to express exist/non-exist. 1 indicates that the relationship exists between the entity pairs, and 0 indicates that the relationship does not exist. For example,
 Drug | Disease | Palliates_Hetionet | Treats_Hetionet | Effect_KEGG | Association_CTD | ... 
 --- | --- | --- | --- |--- |--- |--- 
 DrugBank:DB00843 | DOID:10652 | 0 | 1 | 0 | 1 | ...
