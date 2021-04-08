@@ -34,5 +34,11 @@ This example comes from the gene vocabulary, it describes a gene entity 'A1BG'. 
 
 We assigned the primary ID for each type of entity, for example, we used HGNC ID as the primary ID in gene entity vocabulary. And we used the entity's primary ID to describe the entities in the relationship. For example, there is a relation 'Treats' between entities 'Donepezil' and 'Alzheimer's Disease' in the CBKH. And we used the entity Donepezil's primary ID (DrugBank:DB00843) and AD's primary ID (DOID:10652) to describe them respectively. When an entity can't find the corresponding primary ID, we will follow the primary priority order to do the mapping. For example, the NCBI ID is the second primary ID for the Gene entity vocabulary. Currently, the existing entity vocabularies have the following primary ID order:
 * Gene: HGNC ID, NCBI ID
-* Disease: Disease Ontology ID, KEGG ID, PharmGKB ID, MeSH ID, OMIM ID
-* Drug: DrugBank ID, KEGG ID, PharmGKB ID, MeSH ID
+* Disease: Disease Ontology ID, KEGG ID, PharmGKB ID, MeSH ID, OMIM ID, iDISK ID
+* Drug: DrugBank ID, KEGG ID, PharmGKB ID, MeSH ID, iDISK ID
+* Anatomy: Uberon ID, BTO ID, MeSH ID, CL ID
+* Molecule: ChEMBL ID, ChEBI ID
+* Symptom: MeSH ID, UMLS CUI
+* DSI: iDISK
+* DSP: iDISK
+* TC: UMLS CUI
