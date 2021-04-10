@@ -1,5 +1,5 @@
 # Cornell Biomedical Knowledge Hub (CBKH)
-CBKG integrates data from 15 publicly available biomedical databases. The current version of CBKG contains a total of 2,374,851 entities of 9 types. Specifically, the CBKG includes 22,963 anatomy entities, 18,774 disease entities, 36,522 drug entities, 87,942 gene entities, 2,065,015 molecule entities, 1,361 symptom entities, 4,101 Dietary Supplement Ingredient (DSI) entities, 137,568 Dietary Supplement Product (DSP) entities and 605 Therapeutic Class (TC) entities. For the relationships in the CBKG (Table 3), there are 96 relation types within 14 kinds of entity pairs, including Anatomy-Gene, Drug-Disease, Drug-Drug, Drug-Gene, Disease-Disease, Disease-Gene, Disease-Symptom, Gene-Gene, DSI-Disease, DSI-Symptom, DSI-Drug, DSI-Anatomy, DSI-DSP and DSI-TC. In total, CBKG contains 49,383,439 relations.
+CBKG integrates data from 17 publicly available biomedical databases. The current version of CBKG contains a total of 2,932,164 entities of 10 types. Specifically, the CBKH includes 22,963 anatomy entities, 18,774 disease entities, 36,522 drug entities, 87,942 gene entities, 2,065,015 molecule entities, 1,361 symptom entities, 4,101 DSI entities, 137,568 DSP entities, 605 TC entities and 2,970 pathway entities. For the relationships in the CBKG (Table 3), there are 100 relation types within 17 kinds of entity pairs, including Anatomy-Gene, Drug-Disease, Drug-Drug, Drug-Gene, Disease-Disease, Disease-Gene, Disease-Symptom, Gene-Gene, DSI-Disease, DSI-Symptom, DSI-Drug, DSI-Anatomy, DSI-DSP, DSI-TC, Disease-Pathway, Drug-Pathway and Gene-Pathway. In total, CBKH contains 49,541,938 relations.
 
 ![Schema](KG_Schema.png)
 
@@ -18,7 +18,8 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 | Dietary Supplement Ingredient |	4,101	| iDISK ID |
 | Dietary Supplement Product |	689,297 |	iDISK ID |
 | Therapeutic Class |	605 |	iDISK ID, UMLS CUI |
-| **Total Entities** | **2,374,851** | - |
+| Pathway | 2,970 | Reactome ID, KEGG ID |
+| **Total Entities** | **2,932,164** | - |
 
 | Relation Type   |	Number     |
 | ----------------|:----------:|
@@ -35,7 +36,10 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 | DSI-Anatomy     |	4,334      |
 | DSP-DSI         |	689,297    |
 | DSI-TC          |	5,430      |
-| **Total Relations** | **49,383,439** |
+| Disease-Pathway | 1,942      |
+| Drug-Pathway    | 3,231      |
+| Gene-Pathway    |153,236     |
+| **Total Relations** | **49,541,938** |
 
 ## Licence
 The data of CBKG is licensed under the [MIT License](https://github.com/houyurain/CBKH/blob/main/LICENSE). The CBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/houyurain/CBKH/blob/main/Source%20Information/README.md)). 
