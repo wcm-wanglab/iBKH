@@ -144,6 +144,15 @@
 			<td>https://creativecommons.org/licenses/by-sa/4.0/</td>
 		</tr>
 		<tr>
+			<td>Reactome</td>
+			<td>Genes, Pathway</td>
+			<td>13,589</td>
+			<td>Gene-Pathway</td>
+			<td>118,480</td>
+			<td>https://reactome.org/</td>
+			<td>https://creativecommons.org/licenses/by/4.0/</td>
+		</tr>
+		<tr>
 			<td>TISSUE</td>
 			<td>Tissue, Gene</td>
 			<td>26,260</td>
