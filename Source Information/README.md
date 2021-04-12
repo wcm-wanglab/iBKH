@@ -127,10 +127,10 @@
 		</tr>
 		<tr>
 			<td>KEGG</td>
-			<td>Drug, Disease, Gene, Variant, Compound, Pathway</td>
-			<td>33,756,186</td>
-			<td>Drug-Gene, Disease-Gene, Gene-Pathway</td>
-			<td>43,464</td>
+			<td>Drug, Disease, Gene, Pathway</td>
+			<td>23,690</td>
+			<td>Drug-Gene, Disease-Gene, Gene-Pathway, Drug-Disease, Drug-Pathway, Disease-Pathway</td>
+			<td>56,873</td>
 			<td>https://www.kegg.jp/</td>
 			<td>http://creativecommons.org/licenses/by-nc/2.0/uk/</td>
 		</tr>
