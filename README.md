@@ -40,7 +40,7 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 | Drug-Pathway    | 3,231      |
 | Gene-Pathway    | 153,236    |
 | Drug-Side Effect| 163,206    |
-| **Total Relations** | **49,705,144** |
+| **Total Relations** | **49,706,554** |
 
 ## Licence
 The data of CBKG is licensed under the [MIT License](https://github.com/houyurain/CBKH/blob/main/LICENSE). The CBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/houyurain/CBKH/blob/main/Source%20Information/README.md)). 
