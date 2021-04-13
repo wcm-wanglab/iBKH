@@ -1,7 +1,7 @@
 ## Download CBKH entities
 To access the entity vocabulary in the CBKH, you can directly download the CBKH entities by the following link.
 ```
-link...
+https://wcm.box.com/s/kz7lnowhf2iejjwsopo6cqsdati0yj6i
 ```
 
 When you unzip the file, you will get the following .csv files.
