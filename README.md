@@ -11,15 +11,15 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 | ---------------|:---------:|:--------------------:|
 | Anatomy        | 22,963    | Uberon ID, BTO ID, MeSH ID, Cell Ontology ID |
 | Disease        | 18,774    | Disease Ontology ID, KEGG ID, PharmGKB ID, MeSH ID, OMIM ID |
-| Drug           | 36,522    | DrugBank ID, KEGG ID, PharmGKB ID, MeSH ID |
+| Drug           | 36,759    | DrugBank ID, KEGG ID, PharmGKB ID, MeSH ID |
 | Gene           | 87,942    | HGNC ID, NCBI ID, PharmGKB ID |
 | Molecule       | 2,065,015 | CHEMBL ID, CHEBI ID |
 | Symptom        | 1,361       | MeSH ID |
 | Dietary Supplement Ingredient |	4,101	| iDISK ID |
-| Dietary Supplement Product |	689,297 |	iDISK ID |
+| Dietary Supplement Product |	137,568 |	iDISK ID |
 | Therapeutic Class |	605 |	iDISK ID, UMLS CUI |
 | Pathway | 2,970 | Reactome ID, KEGG ID |
-| **Total Entities** | **2,932,164** | - |
+| **Total Entities** | **2,382,309** | - |
 
 | Relation Type   |	Number     |
 | ----------------|:----------:|
@@ -38,8 +38,9 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 | DSI-TC          |	5,430      |
 | Disease-Pathway | 1,942      |
 | Drug-Pathway    | 3,231      |
-| Gene-Pathway    |153,236     |
-| **Total Relations** | **49,541,938** |
+| Gene-Pathway    | 153,236    |
+| Drug-Side Effect| 163,206    |
+| **Total Relations** | **49,705,144** |
 
 ## Licence
 The data of CBKG is licensed under the [MIT License](https://github.com/houyurain/CBKH/blob/main/LICENSE). The CBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/houyurain/CBKH/blob/main/Source%20Information/README.md)). 
