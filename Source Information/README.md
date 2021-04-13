@@ -153,6 +153,15 @@
 			<td>https://creativecommons.org/licenses/by/4.0/</td>
 		</tr>
 		<tr>
+			<td>SIDER</td>
+			<td>Drug, Side effect</td>
+			<td>5,681</td>
+			<td>Drug-Side effect</td>
+			<td>163,206</td>
+			<td>http://sideeffects.embl.de/</td>
+			<td>https://creativecommons.org/licenses/by-nc-sa/4.0/</td>
+		</tr>
+		<tr>
 			<td>TISSUE</td>
 			<td>Tissue, Gene</td>
 			<td>26,260</td>
