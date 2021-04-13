@@ -1,10 +1,10 @@
 # Cornell Biomedical Knowledge Hub (CBKH)
-CBKG integrates data from 17 publicly available biomedical databases. The current version of CBKG contains a total of 2,932,164 entities of 10 types. Specifically, the CBKH includes 22,963 anatomy entities, 18,774 disease entities, 36,522 drug entities, 87,942 gene entities, 2,065,015 molecule entities, 1,361 symptom entities, 4,101 DSI entities, 137,568 DSP entities, 605 TC entities and 2,970 pathway entities. For the relationships in the CBKG (Table 3), there are 100 relation types within 17 kinds of entity pairs, including Anatomy-Gene, Drug-Disease, Drug-Drug, Drug-Gene, Disease-Disease, Disease-Gene, Disease-Symptom, Gene-Gene, DSI-Disease, DSI-Symptom, DSI-Drug, DSI-Anatomy, DSI-DSP, DSI-TC, Disease-Pathway, Drug-Pathway and Gene-Pathway. In total, CBKH contains 49,541,938 relations.
+CBKG integrates data from 18 publicly available biomedical databases. The current version of CBKG contains a total of 2,932,164 entities of 10 types. Specifically, the CBKH includes 22,963 anatomy entities, 18,774 disease entities, 36,522 drug entities, 87,942 gene entities, 2,065,015 molecule entities, 1,361 symptom entities, 4,101 DSI entities, 137,568 DSP entities, 605 TC entities and 2,970 pathway entities. For the relationships in the CBKG (Table 3), there are 100 relation types within 17 kinds of entity pairs, including Anatomy-Gene, Drug-Disease, Drug-Drug, Drug-Gene, Disease-Disease, Disease-Gene, Disease-Symptom, Gene-Gene, DSI-Disease, DSI-Symptom, DSI-Drug, DSI-Anatomy, DSI-DSP, DSI-TC, Disease-Pathway, Drug-Pathway and Gene-Pathway. In total, CBKH contains 49,541,938 relations.
 
 ![Schema](KG_Schema.png)
 
 ## Materials and Methods
-Our ultimate goal was to build a biomedical knowledge graph via comprehensively incorporating biomedical knowledge as much as possible. To this end, we collected and integrated 16 publicly available data sources to curate a comprehensive one. Details of the used data resources were listed in [Table](https://github.com/houyurain/CBKH/blob/main/Source%20Information/README.md).
+Our ultimate goal was to build a biomedical knowledge graph via comprehensively incorporating biomedical knowledge as much as possible. To this end, we collected and integrated 18 publicly available data sources to curate a comprehensive one. Details of the used data resources were listed in [Table](https://github.com/houyurain/CBKH/blob/main/Source%20Information/README.md).
 
 ## Statistics of CBKH
 | Entity Type    | Number    | Included Identifiers |
