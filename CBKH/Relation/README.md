@@ -1,7 +1,7 @@
 ## Download CBKH relations
 To access the relations in the CBKH, you can directly download the CBKH relations by the following link.
 ```
-link...
+https://wcm.box.com/s/fzzsx9ldj8a64jsa04hyf8khple7js7n
 ```
 
 When you unzip the file, you will get the following .csv files.
