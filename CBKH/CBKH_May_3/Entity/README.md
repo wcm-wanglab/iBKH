@@ -27,9 +27,10 @@ Each row in the CBKH entity vocabulary describes an entity, and each column in t
 | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
 The above row comes from the disease vocabulary, which describes a disease entity 'alzheimer's disease'. We can observe that the entity 'alzheimer's disease' has the following information, Disease Ontology ID (DOID:10652), KEGG ID (H00056), PharmGKB ID (PA443319), UMLS CUI (C0002395), MeSH ID (D000544), ICD-10 code (G30) and ICD-9 code (331).
+
 | primary | symbol | hgnc_id | ncbi_id | pharmgkb_id | 
-| --- | --- | --- | --- | --- | --- 
-| HGNC:5 | A1BG | 5 | H01666 | 1 | PA24356 |
+| --- | --- | --- | --- | --- |
+| HGNC:5 | A1BG | 5 | 1 | PA24356 |
 | ... | ... | ... | ... | ... | 
 
 This example comes from the gene vocabulary, it describes a gene entity 'A1BG'. The corresponding information of the entity 'A1BG' has, HGNC ID (HGNC:5), NCBI ID (NCBI:1), gene symbol (A1BG) and PharmGKB ID (PA24356).
