@@ -46,10 +46,10 @@
 		</tr>
 		<tr>
 			<td>Comparative Toxicogenomics Database</td>
-			<td> 	Disease, Gene, Chemical, Pathway</td>
+			<td> Disease, Gene, Chemical, Pathway</td>
 			<td>73,922</td>
 			<td>Chemical-Gene, Chemical-Disease, Chemical-Pathway, Gene-Disease, Gene-Pathway, Disease-Pathway</td>
-			<td>38344568</td>
+			<td>38,344,568</td>
 			<td>http://ctdbase.org/</td>
 			<td>https://creativecommons.org/licenses/by/4.0/</td>
 		</tr>
