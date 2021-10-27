@@ -4,7 +4,7 @@ iBKH integrates data from 18 publicly available biomedical databases. The curren
 ![Schema](KG_Schema_May_3.png)
 
 ## Materials and Methods
-Our ultimate goal was to build a biomedical knowledge graph via comprehensively incorporating biomedical knowledge as much as possible. To this end, we collected and integrated 18 publicly available data sources to curate a comprehensive one. Details of the used data resources were listed in [Table](Source Information/README.md).
+Our ultimate goal was to build a biomedical knowledge graph via comprehensively incorporating biomedical knowledge as much as possible. To this end, we collected and integrated 18 publicly available data sources to curate a comprehensive one. Details of the used data resources were listed in [Table](https://github.com/wcm-wanglab/iBKH/blob/3bae2aa50beb111a0e07a30cdbfc7a23a45d3e19/Source%20Information/README.md).
 
 ## Statistics of iBKH
 | Entity Type    | Number    | Included Identifiers |
