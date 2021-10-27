@@ -45,7 +45,7 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 | **Total Relations** | **48,194,646** |
 
 ## Licence
-The data of CBKG is licensed under the [MIT License](https://github.com/houyurain/CBKH/blob/main/LICENSE). The iBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/houyurain/CBKH/blob/main/Source%20Information/README.md)). 
+The data of iBKH is licensed under the [MIT License](https://github.com/houyurain/CBKH/blob/main/LICENSE). The iBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/houyurain/CBKH/blob/main/Source%20Information/README.md)). 
 
 ## Cite
 ```
