@@ -1,5 +1,5 @@
-## Download CBKH relations
-To access the relations in the CBKH, you can directly download the CBKH relations by the following link.
+## Download iBKH relations
+To access the relations in the iBKH, you can directly download the iBKH relations by the following link.
 
 ```
 https://wcm.box.com/s/fzzsx9ldj8a64jsa04hyf8khple7js7n
@@ -23,8 +23,8 @@ When you unzip the file, you will get the following .csv files.
 ./relation/SDSI_TC_res.csv
 ```
 
-## CBKH relations
-Each row in the CBKH relationship describes the relationship between a pair of entities. We kept all the relationship types from the source database in the CBKH relations tables, and use binary to express exist/non-exist. 1 indicates that the relationship exists between the entity pairs, and 0 indicates that the relationship does not exist. For example,
+## iBKH relations
+Each row in the iBKH relationship describes the relationship between a pair of entities. We kept all the relationship types from the source database in the iBKH relations tables, and use binary to express exist/non-exist. 1 indicates that the relationship exists between the entity pairs, and 0 indicates that the relationship does not exist. For example,
 Drug | Disease | Palliates | Treats | Effect | Association | Source 
 --- | --- | --- | --- |--- |--- |--- 
 DrugBank:DB00843 | DOID:10652 | 0 | 1 | 0 | 1 | Hetionet; CTD 
