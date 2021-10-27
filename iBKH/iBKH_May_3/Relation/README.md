@@ -1,5 +1,5 @@
-## Download CBKH relations
-To access the relations in the CBKH, you can directly download the CBKH relations by the following link.
+## Download iBKH relations
+To access the relations in the iBKH, you can directly download the iBKH relations by the following link.
 
 ```
 https://wcm.box.com/s/dcq6lj4vxzs4rnxu6xx60ziwl62qrzyp
@@ -27,8 +27,8 @@ When you unzip the file, you will get the following .csv files.
 ./relation/SDSI_TC_res.csv
 ```
 
-## CBKH relations
-Each row in the CBKH relationship describes the relationship between a pair of entities. We kept all the relationship types from the source database in the CBKH relations tables, and use binary to express exist/non-exist. 1 indicates that the relationship exists between the entity pairs, and 0 indicates that the relationship does not exist. The inference score reflects the degree of similarity between the drug-disease network in the CTD inferred relationship. The triplets will be assigned an inference score when the triplets are only an inferred relation from the CTD. 
+## iBKH relations
+Each row in the iBKH relationship describes the relationship between a pair of entities. We kept all the relationship types from the source database in the iBKH relations tables, and use binary to express exist/non-exist. 1 indicates that the relationship exists between the entity pairs, and 0 indicates that the relationship does not exist. The inference score reflects the degree of similarity between the drug-disease network in the CTD inferred relationship. The triplets will be assigned an inference score when the triplets are only an inferred relation from the CTD. 
 
 | Drug | Disease | Treats | Palliates | Effect | Associate | Inferred_Relation | ... | Source | Inference_Score |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
