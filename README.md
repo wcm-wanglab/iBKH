@@ -49,13 +49,13 @@ The data of iBKH is licensed under the [MIT License](https://github.com/wcm-wang
 
 ## Cite
 ```
-@article{su2021cbkh,
-  title={CBKH: The Cornell Biomedical Knowledge Hub},
+@article{su2021ibkh,
+  title={iBKH: The integrative Biomedical Knowledge Hub},
   author={Su, Chang and Hou, Yu and Guo, Winston and Chaudhry, Fayzan and Ghahramani, Gregory and Zhang, Haotan and Wang, Fei},
   journal={medRxiv},
   year={2021},
   publisher={Cold Spring Harbor Laboratory Press}，
-  url = {https://www.medrxiv.org/content/10.1101/2021.03.12.21253461v1}
+  url = {https://www.medrxiv.org/content/10.1101/2021.03.12.21253461v3}
 }
 ```
 
