@@ -1,4 +1,4 @@
-# Alzheimer's Disease Drugs Repurposing via pre-trained embedding
+# iBKH-based Knowledge Discovery - A Case Study for Drug Repurposing Hypothesis Generation for Alzheimer's Disease
 
 This is an example showing that conduct AD drug repurposing by using iBKH with pre-trained embedding information. We used pre-trained iBKH embedding information from different models as input, then predicted the most likely associated entity with Alzheimer's Disease (AD).
 
