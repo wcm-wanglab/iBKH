@@ -47,7 +47,29 @@ When you run the code, the code Case_Study-AD-Drug-Repurposing.ipynb and the Dat
 │   │   ├── relations.tsv
 │   │   ├── iBKH_DistMult_entity.npy
 │   │   ├── iBKH_DistMult_relation.npy
-│   ├── usage.md
+│   ├── ComplEx          
+│   │   ├── entities.tsv 
+│   │   ├── relations.tsv
+│   │   ├── iBKH_ComplEx_entity.npy
+│   │   ├── iBKH_ComplEx_relation.npy
+│   ├── TransE_l2          
+│   │   ├── entities.tsv 
+│   │   ├── relations.tsv
+│   │   ├── iBKH_TransE_l2.npy
+│   │   ├── iBKH_TransE_l2.npy
+│   ├── TransR          
+│   │   ├── entities.tsv 
+│   │   ├── relations.tsv
+│   │   ├── iBKH_TransR_entity.npy
+│   │   ├── iBKH_TransR_relation.npy
+│   ├── Drug_list          
+│   │   ├── drugs_list_approve_phase1234.csv
+│   │   ├── drugs_list_approve_phase234.csv
+│   │   ├── drugs_list_approve_phase34.csv
+│   │   ├── drugs_list_approve_phase4.csv
+│   │   ├── drugs_list_approve.csv
+├── predict_result
+│   │   ├── auc_figures
 │   └── ...
 └── ...
 ```
