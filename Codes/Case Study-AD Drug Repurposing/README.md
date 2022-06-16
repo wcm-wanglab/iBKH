@@ -1,11 +1,15 @@
 # iBKH-based Knowledge Discovery - A Case Study for Drug Repurposing Hypothesis Generation for Alzheimer's Disease
 
-This is an example showing that conduct AD drug repurposing by using iBKH with pre-trained embedding information. We used pre-trained iBKH embedding information from different models as input, then predicted the most likely associated entity with Alzheimer's Disease (AD).
+This is the implementation of Alzheimer's Disease (AD) drug repurposing based on iBKH.
 
-You can find the embedding data from different models and the drug list with the ground truth in the following link. 
+Using the KG embedding module, we have generated entity and relation embeddings for iBKH. 
+
+To evaluate model performance, we use the FDA approved and drugs in clinical trials (Phase I, II, III, and IV) for AD treatment as the ground truth.
+
+You may find the embedding data based on different embedding algorithms and the drug list with the ground truth label at:
 https://wcm.box.com/s/jbh90entaed2jotvyab8wjsrprs4i5i8
 
-When you download the data, you will see the following files:
+Within the downloaded folder, you will have the following files:
 ```
 ./Data
 ./Data/ComplEx
