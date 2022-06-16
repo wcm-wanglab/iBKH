@@ -37,3 +37,15 @@ When you download the data, you will see the following files:
 ```
 
 When you run the code, the code Case_Study-AD-Drug-Repurposing.ipynb and the Data folder should in this structure.
+.
+├── ...
+├── Case_Study-AD-Drug-Repurposing.ipynb
+├── Data
+│   ├── DistMult          
+│   │   ├── entities.tsv 
+│   │   ├── relations.tsv
+│   │   ├── iBKH_DistMult_entity.npy
+│   │   ├── iBKH_DistMult_relation.npy
+│   ├── usage.md
+│   └── ...
+└── ...
