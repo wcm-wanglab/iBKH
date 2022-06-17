@@ -40,7 +40,7 @@ Within the downloaded folder, you will have the following files:
 ./Data/Drug_list/drugs_list_approve.csv
 ```
 
-When you run the code, the code Case_Study-AD-Drug-Repurposing.ipynb and the Data folder should in this structure.
+To run Case_Study-AD-Drug-Repurposing.ipynb script, please make sure putting the files following the structure below.
 ```
 .
 ├── ...
