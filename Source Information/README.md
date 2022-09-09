@@ -51,7 +51,7 @@
 			<td>Chemical-Gene, Chemical-Disease, Chemical-Pathway, Gene-Disease, Gene-Pathway, Disease-Pathway</td>
 			<td>38,344,568</td>
 			<td>http://ctdbase.org/</td>
-			<td>https://creativecommons.org/licenses/by/4.0/</td>
+			<td>Confirmed via email</td>
 		</tr>
 		<tr>
 			<td>ChEMBL</td>
@@ -114,7 +114,7 @@
 			<td>-</td>
 			<td>-</td>
 			<td>https://www.genenames.org/</td>
-			<td>http://creativecommons.org/licenses/by/4.0/</td>
+			<td>No restriction (https://www.genenames.org/about/)</td>
 		</tr>
 		<tr>
 			<td>iDISK</td>
