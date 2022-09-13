@@ -132,7 +132,7 @@
 			<td>Drug-Gene, Disease-Gene, Gene-Pathway, Drug-Disease, Drug-Pathway, Disease-Pathway</td>
 			<td>56,873</td>
 			<td>https://www.kegg.jp/</td>
-			<td>http://creativecommons.org/licenses/by-nc/2.0/uk/</td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>PharmGKB</td>
