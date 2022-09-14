@@ -45,7 +45,7 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 | **Total Relations** | **48,194,646** |
 
 ## Licence
-The data of iBKH is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The iBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/wcm-wanglab/iBKH/blob/3bae2aa50beb111a0e07a30cdbfc7a23a45d3e19/Source%20Information/README.md)). For sources with defined licenses, we apply the license attribute on a per-node and per-edge basis. However, some sources do not provide any licenses, so for those, we have requested permission.
+The data of iBKH is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The iBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/wcm-wanglab/iBKH/blob/main/Source%20Information/README.md)). For sources with defined licenses, we apply the license attribute on a per-node and per-edge basis. However, some sources do not provide any licenses, so for those, we have requested permission.
 
 ## Cite
 ```
