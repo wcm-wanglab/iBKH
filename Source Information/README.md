@@ -126,15 +126,6 @@
 			<td>https://creativecommons.org/licenses/by-sa/3.0/us/</td>
 		</tr>
 		<tr>
-			<td>KEGG</td>
-			<td>Drug, Disease, Gene, Pathway</td>
-			<td>23,690</td>
-			<td>Drug-Gene, Disease-Gene, Gene-Pathway, Drug-Disease, Drug-Pathway, Disease-Pathway</td>
-			<td>56,873</td>
-			<td>https://www.kegg.jp/</td>
-			<td></td>
-		</tr>
-		<tr>
 			<td>PharmGKB</td>
 			<td>Genes, Variant, Drug/Chemical, Phenotype</td>
 			<td>43,112</td>
