@@ -1,24 +1,24 @@
 # integrative Biomedical Knowledge Hub (iBKH)
-iBKH integrates data from 18 publicly available biomedical databases. The current version of iBKH contains a total of 2,384,501 entities of 11 types. Specifically, the iBKH includes 23,003 anatomy entities, 19,236 disease entities, 37,997 drug entities, 88,376 gene entities, 2,065,015 molecule entities, 1,361 symptom entities, 4,101 DSI entities, 137,568 DSP entities, 605 TC entities, 2,988 pathway entities and 4,251 side-effect entities. For the relationships in the iBKH, there are 86 relation types within 18 kinds of entity pairs, including Anatomy-Gene, Drug-Disease, Drug-Drug, Drug-Gene, Disease-Disease, Disease-Gene, Disease-Symptom, Gene-Gene, DSI-Disease, DSI-Symptom, DSI-Drug, DSI-Anatomy, DSI-DSP, DSI-TC, Disease-Pathway, Drug-Pathway, Gene-Pathway and Drug-Side Effect. In total, iBKH contains 48,194,646 relations.
+iBKH integrates data from 17 publicly available biomedical databases. The current version of iBKH contains a total of 2,384,501 entities of 11 types. Specifically, the iBKH includes 23,003 anatomy entities, 19,236 disease entities, 37,997 drug entities, 88,376 gene entities, 2,065,015 molecule entities, 1,361 symptom entities, 4,101 DSI entities, 137,568 DSP entities, 605 TC entities, 2,988 pathway entities and 4,251 side-effect entities. For the relationships in the iBKH, there are 86 relation types within 18 kinds of entity pairs, including Anatomy-Gene, Drug-Disease, Drug-Drug, Drug-Gene, Disease-Disease, Disease-Gene, Disease-Symptom, Gene-Gene, DSI-Disease, DSI-Symptom, DSI-Drug, DSI-Anatomy, DSI-DSP, DSI-TC, Disease-Pathway, Drug-Pathway, Gene-Pathway and Drug-Side Effect. In total, iBKH contains 48,194,646 relations.
 
 <img src="iBKH_Schema.png" width="500">
 
 ## Materials and Methods
-Our ultimate goal was to build a biomedical knowledge graph via comprehensively incorporating biomedical knowledge as much as possible. To this end, we collected and integrated 18 publicly available data sources to curate a comprehensive one. Details of the used data resources were listed in [Table](https://github.com/wcm-wanglab/iBKH/blob/3bae2aa50beb111a0e07a30cdbfc7a23a45d3e19/Source%20Information/README.md).
+Our ultimate goal was to build a biomedical knowledge graph via comprehensively incorporating biomedical knowledge as much as possible. To this end, we collected and integrated 17 publicly available data sources to curate a comprehensive one. Details of the used data resources were listed in [Table](https://github.com/wcm-wanglab/iBKH/blob/main/Source%20Information/README.md).
 
 ## Statistics of iBKH
 | Entity Type    | Number    | Included Identifiers |
 | ---------------|:---------:|:--------------------:|
 | Anatomy        | 23,003    | Uberon ID, BTO ID, MeSH ID, Cell Ontology ID |
-| Disease        | 19,236    | Disease Ontology ID, KEGG ID, PharmGKB ID, MeSH ID, OMIM ID |
-| Drug           | 37,997    | DrugBank ID, KEGG ID, PharmGKB ID, MeSH ID |
+| Disease        | 19,236    | Disease Ontology ID, PharmGKB ID, MeSH ID, OMIM ID |
+| Drug           | 37,997    | DrugBank ID, PharmGKB ID, MeSH ID |
 | Gene           | 88,376    | HGNC ID, NCBI ID, PharmGKB ID |
 | Molecule       | 2,065,015 | CHEMBL ID, CHEBI ID |
 | Symptom        | 1,361       | MeSH ID |
 | Dietary Supplement Ingredient |	4,101	| iDISK ID |
 | Dietary Supplement Product |	137,568 |	iDISK ID |
 | Therapeutic Class |	605 |	iDISK ID, UMLS CUI |
-| Pathway | 2,988 | Reactome ID, KEGG ID, Gene Ontology ID |
+| Pathway | 2,988 | Reactome ID, Gene Ontology ID |
 | Side-Effect | 4,251 | UMLS CUI |
 | **Total Entities** | **2,384,501** | - |
 
