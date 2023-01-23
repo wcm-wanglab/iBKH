@@ -51,14 +51,14 @@ The data of iBKH is licensed under the [CC BY-NC-SA 4.0](https://creativecommons
 ```
 @article {Su2021.03.12.21253461,
   title = {Biomedical Discovery through the integrative Biomedical Knowledge Hub (iBKH)},
-	author = {Chang Su, Yu Hou, Suraj Rajendran, Jacqueline R. M. A. Maasch, Zehra Abedi, Haotan Zhang, Zilong Bai, 
-		  Anthony Cuturrufo, Winston Guo, Fayzan F. Chaudhry, Gregory Ghahramani, Jian Tang, Feixiong Cheng, 
-		  Yue Li, Rui Zhang, Jiang Bian, Fei Wang},
-	year = {2022},
-	doi = {10.1101/2021.03.12.21253461},
-	publisher = {Cold Spring Harbor Laboratory Press},
-	URL = {https://www.medrxiv.org/content/10.1101/2021.03.12.21253461v4},
-	journal = {medRxiv}
+  author = {Chang Su, Yu Hou, Suraj Rajendran, Jacqueline R. M. A. Maasch, Zehra Abedi, Haotan Zhang, Zilong Bai, 
+	    Anthony Cuturrufo, Winston Guo, Fayzan F. Chaudhry, Gregory Ghahramani, Jian Tang, Feixiong Cheng, 
+	    Yue Li, Rui Zhang, Jiang Bian, Fei Wang},
+  year = {2022},
+  doi = {10.1101/2021.03.12.21253461},
+  publisher = {Cold Spring Harbor Laboratory Press},
+  URL = {https://www.medrxiv.org/content/10.1101/2021.03.12.21253461v4},
+  journal = {medRxiv}
 }
 
 ```
