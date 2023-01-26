@@ -178,7 +178,7 @@ def network_data(cohort_name, target_type, topk):
 
 
 def generate_network_triplets(cypher_statement):
-    uri = "bolt://54.92.218.239:7687"
+    uri = "bolt://***:7687" // Neo4j URL
     driver = GraphDatabase.driver(uri, auth=("neo4j", "password"))
     session = driver.session()
     triplets_list = []
