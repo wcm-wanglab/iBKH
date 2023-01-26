@@ -5,7 +5,7 @@ import neo4j
 import pandas as pd
 from tqdm import tqdm
 
-from dashboard.link_prediction_multi import *
+from link_prediction_multi import *
 from neo4j import GraphDatabase
 import itertools
 import os
@@ -15,7 +15,7 @@ def get_cohort_context(cohort_name, topk):
     with open('concept_iBKH.obj', 'rb') as f:
         concept_iBKH = pickle.load(f)
     f.close()
-    g_vob = pd.read_csv('/Users/yuhou/PycharmProjects/iBKH_UI/dashboard/static/data/Result/entity/gene_vocab.csv')
+    g_vob = pd.read_csv('Data/iBKH/Entity/gene_vocab.csv')
     ibkh_symbol_list = g_vob['symbol'].tolist()
 
     cohort_disease = pd.read_csv(cohort_name + '_disease.csv')
@@ -281,16 +281,6 @@ def generate_network_data(triplets_list, input_list, predict_res, primary):
 
 
 def main():
-    # input_entity_list = [
-    #     ["alzheimer's disease", "Disease", 1],
-    #     ["APOE", "Gene", 1]
-    # ]
-    # get_cohort_context('cohort_male', 10)
-    # print(entity_map['MESH:D001007'])
-    # cypher_statement = "MATCH (pre:Gene {symbol: \"APOE\"}), (can:Drug {name: \"Cyproheptadine\"}), path = allShortestPaths((pre)-[*..15]-(can)) RETURN path LIMIT 5"
-    # network_data = generate_network_data(cypher_statement, "APOE", "Cyproheptadine")
-    # print(network_data)
-
     get_cohort_context("cohort_female", 10)
     cohort_name = 'cohort_male'
     for topk in [10, 100, 200]:
