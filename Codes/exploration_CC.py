@@ -1,9 +1,4 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@ File: exploration_CC.py
-@ Time: 11/7/22 2:39 PM
-"""
+
 import pickle
 
 import neo4j
