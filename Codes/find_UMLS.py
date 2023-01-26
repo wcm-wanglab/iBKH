@@ -1,9 +1,3 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yang Liu
-@ File: find_UMLS.py
-@ Time: 11/18/22 2:04 PM
-"""
 
 import requests
 import pickle
