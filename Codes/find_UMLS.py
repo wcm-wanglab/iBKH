@@ -5,12 +5,11 @@ import pandas as pd
 from tqdm import tqdm
 import os
 
-folder = '/Users/yuhou/Documents/Knowledge_Graph/iBKH/'
-apiKey = '9a095f1e-f79f-4958-bfdd-2bcba5f134d6'
+apiKey = '***' // apiKey on UMLS
 
-di_vob = pd.read_csv('/Users/yuhou/PycharmProjects/iBKH_UI/dashboard/static/data/Result/entity/disease_vocab.csv')
-sy_vob = pd.read_csv('/Users/yuhou/PycharmProjects/iBKH_UI/dashboard/static/data/Result/entity/symptom_vocab.csv')
-se_vob = pd.read_csv('/Users/yuhou/PycharmProjects/iBKH_UI/dashboard/static/data/Result/entity/side_effect_vocab.csv')
+di_vob = pd.read_csv('Data/iBKH/Entity/disease_vocab.csv')
+sy_vob = pd.read_csv('Data/iBKH/Entity/symptom_vocab.csv')
+se_vob = pd.read_csv('Data/iBKH/Entity/side_effect_vocab.csv')
 
 di_vobUMLS_list = di_vob.dropna(subset=['umls_cui'])['umls_cui'].tolist()
 sy_vobUMLS_list = sy_vob.dropna(subset=['umls_cui'])['umls_cui'].tolist()
@@ -48,14 +47,6 @@ def get_UMLS_name(umls_cui):
 
 
 def match_concept2UMLS():
-    # concept_list = [
-    #     "amnesia", "Anorexia", "Anxiety", "aphrenia", "apnoea", "Atrial fibrillation", "Cancer",
-    #     "Circadian Clock Disruption", "Cognitive decline", "Dementia with Lewy bodies", "Depression", "Dysphagia",
-    #     "Elevated blood pressure", "falls", "Frontotemporal dementia", "Hallucinations", "Hearing loss",
-    #     "Heart failure", "Hyperglycaemia", "hypertension", "hyperthyroidism", "hypothyroidism", "ischaemia",
-    #     "Kidney disease", "memory loss", "Obesity", "Parkinson's disease", "parkinsonism", "Seizures", "Sleep disorder",
-    #     "Vascular disease", "fractures", "Atherosclerosis", "Osteoporosis", "Diabetes", "Glaucoma"
-    # ]
     disease_list = pd.read_csv('cohort_female_disease.csv')['Unnamed: 0'].tolist()
     res = {}
     for concept_name in tqdm(disease_list):
@@ -113,10 +104,6 @@ def test_path(weight_type, pval_filter, topk):
 
 
 def main():
-    # match_concept2UMLS()
-    # match_concept2iBKH_nodes()
-    # umls_cui = access_UMLS_by_name("falls")
-    # print(umls_cui)
     test_path('LR', True, None)
 
 
