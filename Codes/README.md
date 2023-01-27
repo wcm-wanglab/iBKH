@@ -1,6 +1,7 @@
 # iBKH Case Study
 ## Overview
 TBD
+
 ## Python Dependencies
 The codes mainly depends on the scientific stacks on the Python 3.7.
 ```
@@ -12,10 +13,23 @@ matplotlib
 neo4j
 statsmodels
 ```
-Install from PyPi
-```
-pip3 install numpy
-```
+
+## DGL-KE Platform Setup
+
+## Knowledge Graph Embedding
+
+## Case Study I
+
+
+## Case Study II
+### Step I: All-of-Us
+
+### Step II: xxx
+Note1: Neo4j-Python Setup...
+Note2: We used UMLS to,,,
+
+
+
 ## Running Guide
 Please refer to each of the Jupiter Notebook files for detailed code instructions. The runtime of all code will depend on the performance of the hardware device. 
 ## Neo4j Setup
