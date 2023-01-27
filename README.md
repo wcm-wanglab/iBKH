@@ -48,7 +48,7 @@ Our ultimate goal was to build a biomedical knowledge graph via comprehensively 
 We deployed our iBKH using Neo4j (https://neo4j.com) on AWS, a robust graph database platform. Specifically, Neo4j can take the CSV files of entities and relations we curated as input and automatically created a KG instance. In this way, the iBKH can be updated efficiently and flexibly. Please find the instrucions [here](https://docs.google.com/document/d/1cLDPLp_nVCJ5xrDlJ-B-Q3wf24tb-Dyq55nAXxaNgTM/edit?usp=sharing).
 
 ## Licence
-The data of iBKH is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The iBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/wcm-wanglab/iBKH/blob/main/Source%20Information/README.md)). For sources with defined licenses, we apply the license attribute on a per-node and per-edge basis. However, some sources do not provide any licenses, so for those, we have requested permission.
+iBKH is licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) and [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The iBKH integrated the data from many resources, and users should consider the licenses for each of them (see the detail in the [table](https://github.com/wcm-wanglab/iBKH/blob/main/Source%20Information/README.md)). For sources with defined licenses, we apply the license attribute on a per-node and per-edge basis. However, some sources do not provide any licenses, so for those, we have requested permission.
 
 ## Cite
 ```
