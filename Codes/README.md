@@ -27,7 +27,9 @@ We extended our knowledge discovery pipeline for enhancing data analysis for pat
 ### Step II: Mapping clincal profiles to iBKH
 Receives clinical information for a specific patient cohort (called a query cohort) and maps them to the corresponding biomedical entities in iBKH (called cohort description entities). </br>
 <b>Note</b>: The mapping of entities in the code uses the UMLS API, so you will need to complete the UMLS registration and obtain the API key associated with your account to complete access to the UMLS API.
-### Step III: Generate Network Data
+### Step III: Cohort Exploration
+We then predicted the context entities of the query cohort, given the description entities and their weights in the query cohort. 
+### Step IV: Generate Network Data
 To visualize the predicted context entities of the query cohort, we pull shortest paths between each pair of cohort description entity and context entity. </br>
 <b>Note</b>: Neo4j-Python Setup. Since some of the data needs to be obtained by communicating with Neo4j, please refer to the deployment instructions for Neo4j on the [homepage](https://github.com/wcm-wanglab/iBKH). And replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.
 
