@@ -5,13 +5,13 @@ TBD
 ## Python Dependencies
 The codes mainly depends on the scientific stacks on the Python 3.7.
 ```
-numpy
-pandas
-torch
-sklearn
-matplotlib
-neo4j
-statsmodels
+numpy 1.21.5
+pandas 1.3.5
+torch 1.2.0 (https://pytorch.org/)
+sklearn 0.0
+neo4j 5.2.0 (https://pypi.org/project/neo4j/5.2.0/)
+matplotlib 3.1.1
+statsmodels 0.11.1
 ```
 
 ## DGL-KE Platform Setup
