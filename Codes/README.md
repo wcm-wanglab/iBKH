@@ -15,15 +15,15 @@ statsmodels 0.11.1
 ```
 
 ## DGL-KE Platform Setup
-
-## Knowledge Graph Embedding
+In this work, we used the Deep Graph Library - Knowledge Embedding (DGL-KE) (https://github.com/awslabs/dgl-ke), a Python-based implementation for the advanced KGE algorithms, such as TransE, TransR, ComplEx, and DistMult. You can follow the [Installation Guide](https://dglke.dgl.ai/doc/install.html) to complete the DGL-KE installation.
 
 ## Case Study I
-
+This is the implementation of Alzheimer's Disease (AD) drug repurposing based on iBKH. The task is to dicover drugs that potentially link to AD in the iBKH. All the detailed information and codes can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Case_Study-AD_Drug_Repurposing.ipynb).
 
 ## Case Study II
+We extended our knowledge discovery pipeline for enhancing data analysis for patient cohort context exploration. Specifically, we utilized the data from ALL-of-US, a nationwide research program in the United States, to build a cohort. Given characteristics of a cohort (INPUT), the module will return cohort context in iBKH, i.e., cohort context entities (CCE) such as genes, pathways, drugs, diseases, symptoms, etc. which are potentially associated with the query cohort. All the detailed information and codes can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Cohort%20Context%20Exploration.ipynb).
 ### Step I: All-of-Us
-
+[The All of Us Research Program](https://www.researchallofus.org/) is a biomedical data platform and all data needs to be analyzed on the platform's secure cloud environment. You can find the tutorial and corresponding codes [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/All-of-Us/AllofUs_tutorial.ipynb).
 ### Step II: xxx
 Note1: Neo4j-Python Setup...
 Note2: We used UMLS to,,,
