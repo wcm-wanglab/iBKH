@@ -40,6 +40,6 @@ We then predicted the context entities of the query cohort, given the descriptio
 To visualize the predicted context entities of the query cohort, we pull shortest paths between each pair of cohort description entity and context entity. Code can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Cohort%20Context%20Exploration.ipynb).
 
 </br>
-<b>Note</b>: Neo4j-Python Setup. Since some of the data needs to be obtained by communicating with Neo4j, please refer to the deployment instructions for Neo4j on the [homepage](https://github.com/wcm-wanglab/iBKH). And replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.
+<b>Note</b>: Neo4j-Python Setup. Since some of the data needs to be obtained by communicating with Neo4j, please refer to the deployment instructions for Neo4j on the [homepage] (https://github.com/wcm-wanglab/iBKH). And replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.
 
 
