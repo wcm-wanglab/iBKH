@@ -28,10 +28,13 @@ We extended our knowledge discovery pipeline for enhancing data analysis for pat
 
 ### Step II: Mapping clincal profiles to iBKH
 Given the clinical profile for a specific patient cohort (called a query cohort), we then mapped them to the corresponding biomedical entities in iBKH (called cohort description entities). </br>
+
+Code can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Cohort%20Context%20Exploration.ipynb).
+
 <b>Note</b>: The mapping of entities in the code uses the UMLS API, so you will need to complete the UMLS registration and obtain the API key associated with your account to complete access to the UMLS API.
 
 ### Step III: Cohort Exploration
-We then predicted the context entities of the query cohort, given the description entities and their weights in the query cohort. 
+We then predicted the context entities of the query cohort, given the description entities and their weights in the query cohort. Code can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Cohort%20Context%20Exploration.ipynb).
 
 ### Step IV: Generate Network Data
 To visualize the predicted context entities of the query cohort, we pull shortest paths between each pair of cohort description entity and context entity. </br>
