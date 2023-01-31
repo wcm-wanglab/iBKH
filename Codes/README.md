@@ -36,10 +36,9 @@ Code can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Coh
 ### Step III: Cohort Exploration
 We then predicted the context entities of the query cohort, given the description entities and their weights in the query cohort. Code can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Cohort%20Context%20Exploration.ipynb).
 
-### Step IV: Generate Network Data
+### Step IV: Generate Context Network for Result Interpretation
 To visualize the predicted context entities of the query cohort, we pull shortest paths between each pair of cohort description entity and context entity. Code can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Cohort%20Context%20Exploration.ipynb).
 
-</br>
-<b>Note</b>: Neo4j-Python Setup. Since some of the data needs to be obtained by communicating with Neo4j, please refer to the deployment instructions for Neo4j on the [homepage] (https://github.com/wcm-wanglab/iBKH). And replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.
+</br><b>Note</b>: Neo4j-Python Setup. To generate the context network, we need to conduct path queries in iBKH. Please refer to the [instruction](https://docs.google.com/document/d/1cLDPLp_nVCJ5xrDlJ-B-Q3wf24tb-Dyq55nAXxaNgTM/edit) for deploying iBKH with Neo4j. And replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.
 
 
