@@ -18,17 +18,21 @@ statsmodels 0.11.1
 In this work, we used the [Deep Graph Library - Knowledge Embedding (DGL-KE)](https://github.com/awslabs/dgl-ke), a Python-based implementation for the advanced KGE algorithms, such as TransE, TransR, ComplEx, and DistMult. You may follow the [Installation Guide](https://dglke.dgl.ai/doc/install.html) to complete the DGL-KE installation.
 
 ## Case Study I
-This is the implementation of Alzheimer's Disease (AD) drug repurposing based on iBKH. The task is to dicover drugs that potentially link to AD in the iBKH. All the detailed information and codes can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Case_Study-AD_Drug_Repurposing.ipynb).
+This is the implementation of Alzheimer's Disease (AD) drug repurposing based on iBKH. The task is to dicover drugs that potentially link to AD in the iBKH. Detailed information and codes can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Case_Study-AD_Drug_Repurposing.ipynb).
 
 ## Case Study II
-We extended our knowledge discovery pipeline for enhancing data analysis for patient cohort context exploration. Specifically, we utilized the data from ALL-of-US, a nationwide research program in the United States, to build a cohort. Given characteristics of a cohort (INPUT), the module will return cohort context in iBKH, i.e., cohort context entities (CCE) such as genes, pathways, drugs, diseases, symptoms, etc. which are potentially associated with the query cohort. All the detailed information and codes can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Cohort%20Context%20Exploration.ipynb).
-### Step I: All-of-Us
-[The All of Us Research Program](https://www.researchallofus.org/) is a biomedical data platform and all data needs to be analyzed on the platform's secure cloud environment. You can find the tutorial and corresponding codes [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/All-of-Us/AllofUs_tutorial.ipynb).
+We extended our knowledge discovery pipeline for enhancing data analysis for patient cohort context exploration. Specifically, we utilized the data from ALL-of-US, a nationwide research program in the United States, to build a cohort. Given characteristics of a cohort (INPUT), the module will return cohort context in iBKH, i.e., cohort context entities (CCE) such as genes, pathways, drugs, diseases, symptoms, etc. which are potentially associated with the query cohort. Detailed information and codes can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Cohort%20Context%20Exploration.ipynb).
+
+### Step I: Generating cohort profiles in All-of-Us database
+[The All of Us Research Program](https://www.researchallofus.org/) is a biomedical data platform and all data needs to be analyzed on the platform's secure cloud environment. Please find the tutorial and corresponding codes [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/All-of-Us/AllofUs_tutorial.ipynb) for building study cohort and generating cohort profiles in All-of-Us.
+
 ### Step II: Mapping clincal profiles to iBKH
-Receives clinical information for a specific patient cohort (called a query cohort) and maps them to the corresponding biomedical entities in iBKH (called cohort description entities). </br>
+Given the clinical profile for a specific patient cohort (called a query cohort), we then mapped them to the corresponding biomedical entities in iBKH (called cohort description entities). </br>
 <b>Note</b>: The mapping of entities in the code uses the UMLS API, so you will need to complete the UMLS registration and obtain the API key associated with your account to complete access to the UMLS API.
+
 ### Step III: Cohort Exploration
 We then predicted the context entities of the query cohort, given the description entities and their weights in the query cohort. 
+
 ### Step IV: Generate Network Data
 To visualize the predicted context entities of the query cohort, we pull shortest paths between each pair of cohort description entity and context entity. </br>
 <b>Note</b>: Neo4j-Python Setup. Since some of the data needs to be obtained by communicating with Neo4j, please refer to the deployment instructions for Neo4j on the [homepage](https://github.com/wcm-wanglab/iBKH). And replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.
