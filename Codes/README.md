@@ -1,6 +1,6 @@
 # iBKH Case Study
 ## Overview
-TBD
+We enable high-quality knowledge discovery based on iBKH. We developed a knowledge discovery module based on [DGL-KE (Deep Graph Library – Knowledge Embedding)](https://aws-dglke.readthedocs.io/en/latest/), a Python package for efficient and scalable graph learning. To demonstrate its potentials, we conducted two proof-of-concept studies: 1) Case Study I: in-silico hypothesis generation for Alzheimer’s disease (AD) drug repurposing, and 2) Case Study II: knowledge-enhanced cohort exploration for older adults with Apolipoprotein E (APOE) ε4 genotype (a significant genetic risk factor of AD).
 
 ## Python Dependencies
 The codes mainly depends on the scientific stacks on the Python 3.7.
