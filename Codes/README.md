@@ -17,7 +17,10 @@ statsmodels 0.11.1
 ## DGL-KE Platform for iBKH Setup
 In this work, we used the [Deep Graph Library - Knowledge Embedding (DGL-KE)](https://github.com/awslabs/dgl-ke), a Python-based implementation for the advanced KGE algorithms, such as TransE, TransR, ComplEx, and DistMult. You may follow the [Installation Guide](https://dglke.dgl.ai/doc/install.html) to complete the DGL-KE installation.
 
-## Case Study I
+## Case Study - Alzheimer's Disease (AD) drug repurposing
+This is the implementation of AD drug repurposing based on iBKH. The task is to dicover drugs that potentially link to AD in the iBKH. Detailed information and codes can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Case_Study-AD_Drug_Repurposing.ipynb).
+
+<!--## Case Study I
 This is the implementation of Alzheimer's Disease (AD) drug repurposing based on iBKH. The task is to dicover drugs that potentially link to AD in the iBKH. Detailed information and codes can be found [here](https://github.com/wcm-wanglab/iBKH/blob/main/Codes/Case_Study-AD_Drug_Repurposing.ipynb).
 
 ## Case Study II
@@ -41,6 +44,6 @@ To visualize the predicted context entities of the query cohort, we pull shortes
 
 </br><b>Note</b>: Neo4j-Python Setup. To generate the context network, we need to conduct path queries in iBKH. Please refer to the [instruction](https://docs.google.com/document/d/1cLDPLp_nVCJ5xrDlJ-B-Q3wf24tb-Dyq55nAXxaNgTM/edit) for deploying iBKH with Neo4j. 
 
-<!--Please replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.-->
+Please replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.-->
 
 
