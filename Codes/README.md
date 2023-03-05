@@ -41,6 +41,6 @@ To visualize the predicted context entities of the query cohort, we pull shortes
 
 </br><b>Note</b>: Neo4j-Python Setup. To generate the context network, we need to conduct path queries in iBKH. Please refer to the [instruction](https://docs.google.com/document/d/1cLDPLp_nVCJ5xrDlJ-B-Q3wf24tb-Dyq55nAXxaNgTM/edit) for deploying iBKH with Neo4j. 
 
-%Please replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.
+<!--Please replace the 'uri' variable in the generate_network_triplets() function in the exploration_CC.py file with your own URL for Neo4j.-->
 
 
