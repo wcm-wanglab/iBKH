@@ -1,15 +1,8 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@File: refine_gene.py
-@Time: 4/27/21 10:50 AM
-"""
-
 import pandas as pd
 
 
-folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/v2_res_Apr2021_refine/res/'
-res_folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/v2_res_Apr2021_refine/gene/'
+folder = ''
+res_folder = ''
 
 
 def remove_duplicated_ncbi():
