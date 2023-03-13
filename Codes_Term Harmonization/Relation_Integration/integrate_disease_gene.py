@@ -8,16 +8,16 @@ CTD_folder = '../CTD/'
 
 
 def integrate_Hetionet():
-    hetionet_DiG = pd.read_csv(folder + 'disease_gene/hetionet_DiG.csv')
+    hetionet_DiG = pd.read_csv(folder + 'hetionet_DiG.csv')
     hetionet_DiG = hetionet_DiG.rename(columns={'source': 'Disease', 'target': 'Gene'})
     hetionet_DiG['Disease'] = hetionet_DiG['Disease'].str.replace('Disease::', '')
     hetionet_DiG['Gene'] = hetionet_DiG['Gene'].str.replace('Gene::', '')
 
-    disease_vocab = pd.read_csv(folder + 'res/entity/disease_vocab.csv')
+    disease_vocab = pd.read_csv(folder + 'disease_vocab.csv')
     do_vocab = disease_vocab.dropna(subset=['do_id'])
     do_primary_dict = do_vocab.set_index('do_id')['primary'].to_dict()
 
-    gene_vocab = pd.read_csv(folder + 'res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv(folder + 'gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_vocab['ncbi_id'] = ncbi_vocab['ncbi_id'].astype(int).astype(str)
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
@@ -53,26 +53,26 @@ def integrate_Hetionet():
 
     DiG_res['Source'] = ['Hetionet'] * len(DiG_res)
     print(DiG_res)
-    DiG_res.to_csv(folder + 'disease_gene_2/DiG_res.csv', index=False)
-    with open(folder + 'disease_gene_2/integration_notes.txt', 'w') as f:
+    DiG_res.to_csv(folder + 'DiG_res.csv', index=False)
+    with open(folder + 'integration_notes.txt', 'w') as f:
         f.write('DiG_res: Hetionet (Associate, Downregulates and Upregulates).\n')
     f.close()
 
 
 def integrate_KEGG():
-    DiG_res = pd.read_csv(folder + 'disease_gene_2/DiG_res.csv')
+    DiG_res = pd.read_csv(folder + 'DiG_res.csv')
     DiG_res_cols = list(DiG_res.columns)[2:]
     DiG_res['Associate_KEGG'] = [0] * len(DiG_res)
 
-    disease_vocab = pd.read_csv(folder + 'res/entity/disease_vocab.csv')
+    disease_vocab = pd.read_csv(folder + 'disease_vocab.csv')
     kegg_disease_vocab = disease_vocab.dropna(subset=['kegg_id'])
     kegg_disease_primary_dict = kegg_disease_vocab.set_index('kegg_id')['primary'].to_dict()
 
-    gene_vocab = pd.read_csv(folder + 'res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv(folder + 'gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
 
-    kegg_df = pd.read_csv(folder + 'disease_gene/kegg_disease_gene.csv')
+    kegg_df = pd.read_csv(folder + 'kegg_disease_gene.csv')
     kegg_df = kegg_df.rename(columns={'disease': 'Disease', 'gene': 'Gene'})
     kegg_df = kegg_df.replace({'Disease': kegg_disease_primary_dict, 'Gene': ncbi_primary_dict})
 
@@ -89,8 +89,8 @@ def integrate_KEGG():
     DiG_res_col_new = DiG_res_col[:-2] + DiG_res_col[-1:] + DiG_res_col[-2:-1]
     DiG_res = DiG_res[DiG_res_col_new]
     print(DiG_res)
-    DiG_res.to_csv(folder + 'disease_gene_2/DiG_res_2.csv', index=False)
-    with open(folder + 'disease_gene_2/integration_notes.txt', 'a') as f:
+    DiG_res.to_csv(folder + 'DiG_res_2.csv', index=False)
+    with open(folder + 'integration_notes.txt', 'a') as f:
         f.write('DiG_res_2: Hetionet and KEGG (Associate).\n')
     f.close()
 
@@ -116,21 +116,21 @@ def extract_PharmGKB_DiG():
             continue
         res.loc[idx] = [disease, gene]
         idx += 1
-    res.to_csv(folder + 'disease_gene/pharmgkb_disease_gene.csv', index=False)
+    res.to_csv(folder + 'pharmgkb_disease_gene.csv', index=False)
 
 
 def integrate_PharmGKB():
-    DiG_res = pd.read_csv(folder + 'disease_gene_2/DiG_res_2.csv')
+    DiG_res = pd.read_csv(folder + 'DiG_res_2.csv')
     DiG_res_cols = list(DiG_res.columns)[2:]
     DiG_res['Associate_PharmGKB'] = [0] * len(DiG_res)
 
-    pharmgkb_res = pd.read_csv(folder + 'disease_gene/pharmgkb_disease_gene.csv')
+    pharmgkb_res = pd.read_csv(folder + 'pharmgkb_disease_gene.csv')
 
-    gene_vocab = pd.read_csv(folder + 'res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv(folder + 'gene_vocab_2.csv')
     pharmgkb_gene_vocab = gene_vocab.dropna(subset=['pharmgkb_id'])
     pharmgkb_gene_primary_dict = pharmgkb_gene_vocab.set_index('pharmgkb_id')['primary'].to_dict()
 
-    disease_vocab = pd.read_csv(folder + 'res/entity/disease_vocab.csv')
+    disease_vocab = pd.read_csv(folder + 'disease_vocab.csv')
     pharmgkb_disease_vocab = disease_vocab.dropna(subset=['pharmgkb_id'])
     pharmgkb_disease_primary_dict = pharmgkb_disease_vocab.set_index('pharmgkb_id')['primary'].to_dict()
 
@@ -148,8 +148,8 @@ def integrate_PharmGKB():
     DiG_res_col_new = DiG_res_col[:-2] + DiG_res_col[-1:] + DiG_res_col[-2:-1]
     DiG_res = DiG_res[DiG_res_col_new]
     DiG_res['Source'] = DiG_res['Source'].apply(lambda x: ';'.join(sorted(set(x.split(';')))))
-    DiG_res.to_csv(folder + 'disease_gene_2/DiG_res_3.csv', index=False)
-    with open(folder + 'disease_gene_2/integration_notes.txt', 'a') as f:
+    DiG_res.to_csv(folder + 'DiG_res_3.csv', index=False)
+    with open(folder + 'integration_notes.txt', 'a') as f:
         f.write('DiG_res_3: Hetionet, KEGG and PharmGKB (Associate).\n')
     f.close()
 
@@ -165,18 +165,18 @@ def integrate_CTD_DiG_curated():
     disease_gene_curated = disease_gene_curated[['Disease', 'Gene']]
     disease_gene_curated = disease_gene_curated.reset_index(drop=True)
 
-    disease_vocab = pd.read_csv(folder + 'res/entity/disease_vocab.csv')
+    disease_vocab = pd.read_csv(folder + 'disease_vocab.csv')
     mesh_disease_vocab = disease_vocab.dropna(subset=['mesh_id'])
     mesh_disease_primary_dict = mesh_disease_vocab.set_index('mesh_id')['primary'].to_dict()
     omim_vocab = disease_vocab.dropna(subset=['omim_id'])
     omim_vocab['omim_id'] = omim_vocab['omim_id'].astype(int).astype(str)
     omim_primary_dict = omim_vocab.set_index('omim_id')['primary'].to_dict()
 
-    gene_vocab = pd.read_csv(folder + 'res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv(folder + 'gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
 
-    DiG_res = pd.read_csv(folder + 'disease_gene_2/DiG_res_3.csv')
+    DiG_res = pd.read_csv(folder + 'DiG_res_3.csv')
     DiG_res_col = list(DiG_res.columns)[2:]
     DiG_res['Associate_CTD'] = [0] * len(DiG_res)
     print(disease_gene_curated)
@@ -210,19 +210,19 @@ def integrate_CTD_DiG_curated():
     DiG_res_col_new = DiG_res_col[:-2] + DiG_res_col[-1:] + DiG_res_col[-2:-1]
     DiG_res = DiG_res[DiG_res_col_new]
     DiG_res['Source'] = DiG_res['Source'].apply(lambda x: ';'.join(sorted(set(x.split(';')))))
-    DiG_res.to_csv(folder + 'disease_gene_2/DiG_res_4.csv', index=False)
-    with open(folder + 'disease_gene_2/integration_notes.txt', 'a') as f:
+    DiG_res.to_csv(folder + 'DiG_res_4.csv', index=False)
+    with open(folder + 'integration_notes.txt', 'a') as f:
         f.write('DiG_res_4: Hetionet, KEGG, PharmGKB and CTD_curated (Associate).\n')
     f.close()
 
 
 def integrate_CTD_DiG_inferred():
-    DiG_res = pd.read_csv(folder + 'disease_gene_2/DiG_res_4.csv')
+    DiG_res = pd.read_csv(folder + 'DiG_res_4.csv')
     DiG_res_col = list(DiG_res.columns)[2:]
     DiG_res['Inferred_Relation'] = [0] * len(DiG_res)
     DiG_res['Inference_Score'] = [''] * len(DiG_res)
 
-    disease_gene_inferred = pd.read_csv(folder + 'disease_gene/CTD_DiG/CTD_disease_gene_inferred.csv')
+    disease_gene_inferred = pd.read_csv(folder + 'CTD_disease_gene_inferred.csv')
 
     for col in DiG_res_col[:-1]:
         disease_gene_inferred[col] = [0] * len(disease_gene_inferred)
@@ -241,18 +241,18 @@ def integrate_CTD_DiG_inferred():
     DiG_res_col_new = DiG_res_col[:-3] + DiG_res_col[-2:-1] + DiG_res_col[-3:-2] + DiG_res_col[-1:]
     DiG_res = DiG_res[DiG_res_col_new]
     DiG_res['Source'] = DiG_res['Source'].apply(lambda x: ';'.join(sorted(set(x.split(';')))))
-    DiG_res.to_csv(folder + 'disease_gene_2/DiG_res_5.csv', index=False)
-    with open(folder + 'disease_gene_2/integration_notes.txt', 'a') as f:
+    DiG_res.to_csv(folder + 'DiG_res_5.csv', index=False)
+    with open(folder + 'integration_notes.txt', 'a') as f:
         f.write('DiG_res_5: Hetionet, KEGG, PharmGKB, CTD_curated and CTD (Inferred_Relation).\n')
     f.close()
 
 
 def integrate_DRKG_DiG():
-    DiG_res = pd.read_csv(folder + 'disease_gene_2/DiG_res_5.csv')
+    DiG_res = pd.read_csv(folder + 'DiG_res_5.csv')
     DiG_res_col = list(DiG_res.columns)[2:]
 
-    drkg_DiG = pd.read_csv('disease/drkg_DiG.csv')
-    # drkg_DDi = pd.read_csv('/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/stage_2/drkg_DDi.csv')
+    drkg_DiG = pd.read_csv('drkg_DiG.csv')
+    # drkg_DDi = pd.read_csv('/drkg_DDi.csv')
     drkg_DiG = drkg_DiG.rename(columns={'entity_1': 'Disease', 'entity_2': 'Gene'})
     drkg_DiG['Disease'] = drkg_DiG['Disease'].str.replace('Disease::', '')
     drkg_DiG['Gene'] = drkg_DiG['Gene'].str.replace('Gene::', '')
@@ -262,14 +262,14 @@ def integrate_DRKG_DiG():
     # print(dig_source_list)
     # print(drkg_DiG.drop_duplicates(subset='relation', keep='first'))
 
-    disease_vocab = pd.read_csv(folder + 'res/entity/disease_vocab.csv')
+    disease_vocab = pd.read_csv(folder + 'disease_vocab.csv')
     mesh_disease_vocab = disease_vocab.dropna(subset=['mesh_id'])
     mesh_disease_primary_dict = mesh_disease_vocab.set_index('mesh_id')['primary'].to_dict()
     omim_vocab = disease_vocab.dropna(subset=['omim_id'])
     omim_vocab['omim_id'] = omim_vocab['omim_id'].astype(int).astype(str)
     omim_primary_dict = omim_vocab.set_index('omim_id')['primary'].to_dict()
 
-    gene_vocab = pd.read_csv(folder + 'res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv(folder + 'gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_vocab['ncbi_id'] = ncbi_vocab['ncbi_id'].astype(int).astype(str)
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
@@ -319,8 +319,8 @@ def integrate_DRKG_DiG():
         DiG_res_col = DiG_res_col_new[2:]
         DiG_res['Source'] = DiG_res['Source'].apply(lambda x: ';'.join(sorted(set(x.split(';')))))
 
-    DiG_res.to_csv(folder + 'disease_gene_2/DiG_res_6.csv', index=False)
-    with open(folder + 'disease_gene_2/integration_notes.txt', 'a') as f:
+    DiG_res.to_csv(folder + 'DiG_res_6.csv', index=False)
+    with open(folder + 'integration_notes.txt', 'a') as f:
         f.write('DiG_res_6: Hetionet, KEGG, CTD and DRKG (Semantic Relations).\n')
     f.close()
 
