@@ -1,16 +1,9 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@File: pathway.py
-@Time: 3/6/21 10:00 PM
-"""
-
 import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 import urllib.error
 
-folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/'
+folder = ''
 
 
 def extract_Reactome_vocab():
