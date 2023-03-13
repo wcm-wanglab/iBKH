@@ -1,17 +1,8 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@File: integrate_disease_gene.py
-@Time: 4/26/21 1:43 PM
-"""
-
 import pandas as pd
 import numpy as np
 
 pd.set_option('display.max_columns', None)
 
-# folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/v2_res_Apr2021_refine/'
-# res_folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/v2_res_Apr2021_refine/res/'
 folder = ''
 CTD_folder = '../CTD/'
 
