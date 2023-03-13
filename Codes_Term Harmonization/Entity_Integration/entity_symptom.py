@@ -1,16 +1,9 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@File: refine_symptom.py
-@Time: 4/26/21 8:49 PM
-"""
-
 import pandas as pd
 import requests
 from lxml.html import fromstring
 
-folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/v2_res_Apr2021_refine/symptom/'
-iDISK_folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/stage_3/idisk/'
+folder = ''
+iDISK_folder = ''
 
 
 def get_UMLS_tgt(apikey):
