@@ -1,26 +1,18 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@File: integrate_gene_related.py
-@Time: 4/27/21 12:23 PM
-"""
-
 import pandas as pd
 import numpy as np
 
 pd.set_option('display.max_columns', None)
 
-folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/'
-# folder = ''
+folder = ''
 
 
 def integrate_Hetionet_GG():
-    hetionet_GG = pd.read_csv(folder + 'gene_related/hetionet_GG.csv')
+    hetionet_GG = pd.read_csv(folder + '/hetionet_GG.csv')
     hetionet_GG = hetionet_GG.rename(columns={'source': 'Gene_1', 'target': 'Gene_2'})
     hetionet_GG['Gene_1'] = hetionet_GG['Gene_1'].str.replace('Gene::', '')
     hetionet_GG['Gene_2'] = hetionet_GG['Gene_2'].str.replace('Gene::', '')
 
-    gene_vocab = pd.read_csv(folder + 'res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv(folder + '/gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_vocab['ncbi_id'] = ncbi_vocab['ncbi_id'].astype(int).astype(str)
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
@@ -58,8 +50,8 @@ def integrate_Hetionet_GG():
 
     GG_res['Source'] = ['Hetionet'] * len(GG_res)
     print(GG_res)
-    GG_res.to_csv(folder + 'gene_related/GG_res.csv', index=False)
-    with open(folder + 'disease_gene/integration_notes.txt', 'w') as f:
+    GG_res.to_csv(folder + '/GG_res.csv', index=False)
+    with open(folder + '/integration_notes.txt', 'w') as f:
         f.write('GG_res: Hetionet (Covaries, Interacts and Regulates).\n')
     f.close()
 
@@ -82,17 +74,17 @@ def extract_PharmGKB_GG():
             continue
         res.loc[idx] = [gene_1, gene_2]
         idx += 1
-    res.to_csv(folder + 'gene_related/pharmgkb_gene_gene.csv', index=False)
+    res.to_csv(folder + '/pharmgkb_gene_gene.csv', index=False)
 
 
 def integrate_PharmGKB_GG():
-    GG_res = pd.read_csv(folder + 'gene_related/GG_res.csv')
+    GG_res = pd.read_csv(folder + '/GG_res.csv')
     GG_res_cols = list(GG_res.columns)[2:]
     GG_res['Associate'] = [0] * len(GG_res)
 
-    pharmgkb_res = pd.read_csv(folder + 'gene_related/pharmgkb_gene_gene.csv')
+    pharmgkb_res = pd.read_csv(folder + '/pharmgkb_gene_gene.csv')
 
-    gene_vocab = pd.read_csv(folder + 'res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv(folder + '/gene_vocab_2.csv')
     pharmgkb_gene_vocab = gene_vocab.dropna(subset=['pharmgkb_id'])
     pharmgkb_gene_primary_dict = pharmgkb_gene_vocab.set_index('pharmgkb_id')['primary'].to_dict()
 
@@ -110,14 +102,14 @@ def integrate_PharmGKB_GG():
     GG_res_col_new = GG_res_col[:-2] + GG_res_col[-1:] + GG_res_col[-2:-1]
     GG_res = GG_res[GG_res_col_new]
     GG_res['Source'] = GG_res['Source'].apply(lambda x: ';'.join(sorted(set(x.split(';')))))
-    GG_res.to_csv(folder + 'gene_related/GG_res_2.csv', index=False)
-    with open(folder + 'gene_related/integration_notes.txt', 'a') as f:
+    GG_res.to_csv(folder + '/GG_res_2.csv', index=False)
+    with open(folder + '/integration_notes.txt', 'a') as f:
         f.write('GG_res_2: Hetionet and PharmGKB (Associate).\n')
     f.close()
 
 
 def integrate_DRKG_GG():
-    drkg_GG = pd.read_csv(folder + 'gene_related/drkg_GG.csv')
+    drkg_GG = pd.read_csv(folder + '/drkg_GG.csv')
     drkg_GG = drkg_GG[(drkg_GG['source'] == 'GNBR') | (drkg_GG['source'] == 'IntAct')]
     drkg_GG = drkg_GG[['entity_1', 'relation', 'entity_2']]
     drkg_GG = drkg_GG[~((drkg_GG['entity_1'] == 'Gene::') | (drkg_GG['entity_2'] == 'Gene::'))]
@@ -132,12 +124,12 @@ def integrate_DRKG_GG():
     # print(gg_source_list)
     # print(drkg_GG.drop_duplicates(subset='relation', keep='first'))
 
-    gene_vocab = pd.read_csv(folder + 'res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv(folder + '/gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_vocab['ncbi_id'] = ncbi_vocab['ncbi_id'].astype(int).astype(str)
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
 
-    GG_res = pd.read_csv(folder + 'gene_related/GG_res_2.csv')
+    GG_res = pd.read_csv(folder + '/GG_res_2.csv')
     GG_res_cols = list(GG_res.columns)[2:]
 
     for drkg_rel in gg_relation_list:
@@ -160,23 +152,23 @@ def integrate_DRKG_GG():
         GG_res = GG_res[GG_res_col_new]
         GG_res_cols = GG_res_col_new[2:]
         GG_res['Source'] = GG_res['Source'].apply(lambda x: ';'.join(sorted(set(x.split(';')))))
-    GG_res.to_csv(folder + 'gene_related/GG_res_3.csv', index=False)
-    with open(folder + 'gene_related/integration_notes.txt', 'a') as f:
+    GG_res.to_csv(folder + '/GG_res_3.csv', index=False)
+    with open(folder + '/integration_notes.txt', 'a') as f:
         f.write('GG_res_3: Hetionet, PharmGKB and DRKG.\n')
     f.close()
 
 
 def integrate_GA_Bgee_present():
-    Bgee_present = pd.read_csv('gene_related/processed_Bgee_present.csv')
+    Bgee_present = pd.read_csv('/processed_Bgee_present.csv')
 
-    ncbi_df = pd.read_table('gene_related/gene2ensembl')
+    ncbi_df = pd.read_table('/gene2ensembl')
     ensembl_ncbi_dict = ncbi_df.set_index('Ensembl_gene_identifier')['GeneID'].to_dict()
 
-    gene_vocab = pd.read_csv('res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv('/gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
 
-    anatomy_vocab = pd.read_csv('res/entity/anatomy_res_3.csv')
+    anatomy_vocab = pd.read_csv('/anatomy_res_3.csv')
     uberon_vocab = anatomy_vocab.dropna(subset=['uberon_id'])
     uberon_primary_dict = uberon_vocab.set_index('uberon_id')['primary'].to_dict()
 
@@ -197,20 +189,20 @@ def integrate_GA_Bgee_present():
         anatomy_list.append(anatomy_primary)
         print(i + 1, '/', len(Bgee_present), 'Completed (Bgee present)...')
     GA_res = pd.DataFrame({'Gene': gene_list, 'Anatomy': anatomy_list, 'Present': [1] * len(gene_list), 'Source': ['Reactome'] * len(gene_list)})
-    GA_res.to_csv('gene_related/GA_res.csv', index=False)
+    GA_res.to_csv('/GA_res.csv', index=False)
 
 
 def integrate_GA_Bgee_absent():
-    GA_res = pd.read_csv('gene_related/GA_res.csv')
+    GA_res = pd.read_csv('/GA_res.csv')
     GA_res = GA_res.rename(columns={'Present': 'Express'})
     GA_res['Absent'] = [0] * len(GA_res)
     print(list(GA_res.columns))
-    Bgee_absent = pd.read_csv('gene_related/processed_Bgee_absent.csv')
+    Bgee_absent = pd.read_csv('/processed_Bgee_absent.csv')
 
-    ncbi_df = pd.read_table('gene_related/gene2ensembl')
+    ncbi_df = pd.read_table('/gene2ensembl')
     ensembl_ncbi_dict = ncbi_df.set_index('Ensembl_gene_identifier')['GeneID'].to_dict()
 
-    gene_vocab = pd.read_csv('res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv('/gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
 
@@ -241,21 +233,21 @@ def integrate_GA_Bgee_absent():
     GA_res.loc[GA_res.duplicated(subset=['Gene', 'Anatomy'], keep=False), 'Absent'] = 1
     GA_res = GA_res.drop_duplicates(subset=['Gene', 'Anatomy'], keep='first')
     GA_res = GA_res[['Gene', 'Anatomy', 'Express', 'Absent', 'Source']]
-    GA_res.to_csv('gene_related/GA_res_2.csv', index=False)
+    GA_res.to_csv('/GA_res_2.csv', index=False)
 
 
 def integrate_GA_TISSUE():
-    GA_res = pd.read_csv('gene_related/GA_res_2.csv')
+    GA_res = pd.read_csv('/GA_res_2.csv')
     GA_res['Express_TISSUE'] = [0] * len(GA_res)
     print(list(GA_res.columns))
-    tissue_df = pd.read_csv('gene_related/processed_TISSUE.csv')
+    tissue_df = pd.read_csv('/processed_TISSUE.csv')
 
-    gene_vocab = pd.read_csv('res/entity/gene_vocab_2.csv')
+    gene_vocab = pd.read_csv('/gene_vocab_2.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_vocab['ncbi_id'] = ncbi_vocab['ncbi_id'].astype(int).astype(str)
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
 
-    anatomy_vocab = pd.read_csv('res/entity/anatomy_res_3.csv')
+    anatomy_vocab = pd.read_csv('/anatomy_res_3.csv')
     bto_vocab = anatomy_vocab.dropna(subset=['bto_id'])
     bto_primary_dict = bto_vocab.set_index('bto_id')['primary'].to_dict()
 
@@ -285,11 +277,11 @@ def integrate_GA_TISSUE():
     GA_res_col = list(GA_res.columns)
     GA_res_col.remove('Express_TISSUE')
     GA_res = GA_res[GA_res_col]
-    GA_res.to_csv('gene_related/GA_res_3.csv', index=False)
+    GA_res.to_csv('/GA_res_3.csv', index=False)
 
 
 def integrate_GPwy_Reactome():
-    gpwy_Reactome = pd.read_table(folder + 'stage_4/entity/pathway/NCBI2Reactome_All_Levels.txt', header=None)
+    gpwy_Reactome = pd.read_table(folder + 'NCBI2Reactome_All_Levels.txt', header=None)
     homo_Reactome = gpwy_Reactome[gpwy_Reactome[5] == 'Homo sapiens']
     homo_Reactome = homo_Reactome[homo_Reactome[0].astype(str).str.isdigit()]
     homo_Reactome[0] = homo_Reactome[0].astype(int).astype(str)
@@ -298,12 +290,12 @@ def integrate_GPwy_Reactome():
     homo_Reactome = homo_Reactome[[0, 1]]
     homo_Reactome = homo_Reactome.rename(columns={0: 'Gene', 1: 'Pathway'})
     print(homo_Reactome)
-    gene_vocab = pd.read_csv(folder + 'v2_res_Apr2021_refine/res/entity/gene_vocab.csv')
+    gene_vocab = pd.read_csv(folder + 'gene_vocab.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_vocab['ncbi_id'] = ncbi_vocab['ncbi_id'].astype(int).astype(str)
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
 
-    pwy_vocab = pd.read_csv(folder + 'v2_res_Apr2021_refine/res/entity/pathway_vocab.csv')
+    pwy_vocab = pd.read_csv(folder + 'pathway_vocab.csv')
     reactome_vocab = pwy_vocab.dropna(subset=['reactome_id'])
     reactome_primary_dict = reactome_vocab.set_index('reactome_id')['primary'].to_dict()
 
@@ -311,28 +303,27 @@ def integrate_GPwy_Reactome():
     print(homo_Reactome)
     homo_Reactome['Reaction'] = [1] * len(homo_Reactome)
     homo_Reactome['Source'] = ['Reactome'] * len(homo_Reactome)
-    homo_Reactome.to_csv(folder + 'v2_res_Apr2021_refine/gene_related/GPwy_res.csv', index=False)
+    homo_Reactome.to_csv(folder + 'GPwy_res.csv', index=False)
 
 
 def integrate_GPwy_KEGG():
-    GPwy_res = pd.read_csv(folder + 'v2_res_Apr2021_refine/gene_related/GPwy_res.csv')
+    GPwy_res = pd.read_csv(folder + 'GPwy_res.csv')
     GPwy_res['Associate'] = [0] * len(GPwy_res)
 
-    kegg_GPwy = pd.read_csv(folder + 'KEGG/kegg_gene_pathway.csv')
+    kegg_GPwy = pd.read_csv(folder + '/kegg_gene_pathway.csv')
     kegg_GPwy = kegg_GPwy.rename(columns={'pathway_id': 'Pathway', 'ncbi_id': 'Gene'})
     kegg_GPwy = kegg_GPwy[['Gene', 'Pathway']]
     print(kegg_GPwy)
-    gene_vocab = pd.read_csv(folder + 'v2_res_Apr2021_refine/res/entity/gene_vocab.csv')
+    gene_vocab = pd.read_csv(folder + 'gene_vocab.csv')
     ncbi_vocab = gene_vocab.dropna(subset=['ncbi_id'])
     ncbi_primary_dict = ncbi_vocab.set_index('ncbi_id')['primary'].to_dict()
 
-    pwy_vocab = pd.read_csv(folder + 'v2_res_Apr2021_refine/res/entity/pathway_vocab.csv')
+    pwy_vocab = pd.read_csv(folder + 'pathway_vocab.csv')
     kegg_vocab = pwy_vocab.dropna(subset=['kegg_id'])
     kegg_primary_dict = kegg_vocab.set_index('kegg_id')['primary'].to_dict()
 
     kegg_GPwy = kegg_GPwy.replace({'Gene': ncbi_primary_dict, 'Pathway': kegg_primary_dict})
     print(kegg_GPwy)
-    # kegg_GPwy.to_csv('/Users/yuhou/Desktop/kegg_GPwy.csv', index=False)
     kegg_GPwy['Reaction'] = [0] * len(kegg_GPwy)
     kegg_GPwy['Source'] = ['KEGG'] * len(kegg_GPwy)
     kegg_GPwy['Associate'] = [1] * len(kegg_GPwy)
@@ -346,14 +337,14 @@ def integrate_GPwy_KEGG():
     GPwy_res_cols = list(GPwy_res.columns)
     GPwy_res_cols_new = GPwy_res_cols[:-2] + GPwy_res_cols[-1:] + GPwy_res_cols[-2:-1]
     GPwy_res = GPwy_res[GPwy_res_cols_new]
-    GPwy_res.to_csv(folder + 'v2_res_Apr2021_refine/gene_related/GPwy_res_2.csv', index=False)
+    GPwy_res.to_csv(folder + 'GPwy_res_2.csv', index=False)
 
 
 def modify_res():
-    AG_res = pd.read_csv(folder + 'v2_res_Apr2021_refine/res/relation/A_G_res.csv')
+    AG_res = pd.read_csv(folder + 'A_G_res.csv')
     AG_res['Source'] = AG_res['Source'].str.replace('Reactome', 'Bgee')
     print(AG_res)
-    AG_res.to_csv(folder + 'v2_res_Apr2021_refine/res/relation/A_G_res.csv', index=False)
+    AG_res.to_csv(folder + 'A_G_res.csv', index=False)
 
 
 def main():
@@ -368,15 +359,6 @@ def main():
     # integrate_GPwy_KEGG()
 
     modify_res()
-    # pwy_vocab = pd.read_csv(folder + 'stage_4/entity/pathway/res/pathway_res.csv')
-    # print(len(pwy_vocab), len(pwy_vocab.drop_duplicates(subset='primary', keep='first')))
-    # reactome_vocab = pwy_vocab.dropna(subset=['Reactome_ID'])
-    # print(len(reactome_vocab), len(reactome_vocab.drop_duplicates(subset='Reactome_ID', keep='first')))
-    # go_vocab = pwy_vocab.dropna(subset=['go_id'])
-    # print(len(go_vocab), len(go_vocab.drop_duplicates(subset='go_id', keep='first')))
-    # # kegg_vocab = pwy_vocab.dropna(subset=['kegg_id'])
-    # # print(len(kegg_vocab), len(kegg_vocab.drop_duplicates(subset='kegg_id', keep='first')))
-    # print(go_vocab[go_vocab.duplicated(subset='go_id', keep=False)])
 
 
 if __name__ == '__main__':
