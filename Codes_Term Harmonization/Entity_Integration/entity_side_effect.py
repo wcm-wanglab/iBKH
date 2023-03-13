@@ -1,6 +1,6 @@
 import pandas as pd
 
-folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/stage_4/'
+folder = ''
 
 
 def extract_SIDER():
