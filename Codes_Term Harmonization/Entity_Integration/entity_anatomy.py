@@ -1,10 +1,3 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@File: refine_anatomy.py
-@Time: 4/28/21 10:56 AM
-"""
-
 import pandas as pd
 import numpy as np
 import string
