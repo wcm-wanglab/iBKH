@@ -1,18 +1,10 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@File: refine_disease.py
-@Time: 4/16/21 9:32 AM
-"""
-
 import pandas as pd
 import numpy as np
 import requests
 from lxml.html import fromstring
 import string
 
-# folder = ''
-folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/v2_res_Apr2021_refine/disease/'
+folder = ''
 term_type_list = ['AC', 'BD', 'BN', 'BPCK', 'BR', 'CC', 'CDC', 'CDO', 'CD', 'CMN', 'CN', 'CPR', 'CP', 'CR', 'CSY', 'CV',
                   'CX', 'DC10', 'DC9', 'DE', 'DFG', 'DF', 'DI', 'DP', 'FI', 'FN', 'GLP', 'GN', 'GO', 'GPCK', 'HTJKN1',
                   'HTJKN', 'HTN', 'HT', 'ID', 'IN', 'IVC', 'IV', 'LA', 'LC', 'LG', 'LN', 'LPDN', 'LPN', 'LVDN', 'MD',
@@ -22,10 +14,6 @@ term_type_list = ['AC', 'BD', 'BN', 'BPCK', 'BR', 'CC', 'CDC', 'CDO', 'CD', 'CMN
                   'PSC', 'PSN', 'PTAV', 'PTCS', 'PTGB', 'PTJKN1', 'PTJKN', 'PTN', 'PT', 'PX', 'RPT', 'RXN_IN', 'RXN_PT',
                   'SBDC', 'SBDF', 'SBDG', 'SBD', 'SCDC', 'SCDF', 'SCDG', 'SCD', 'SCN', 'SD', 'SI', 'SMQ', 'SP', 'ST',
                   'SU', 'TA', 'TG', 'TQ', 'UCN', 'USN', 'VPT', 'VS', 'XD']
-                  # 'AS', 'AUN', 'CCN', 'CCS', 'CDD', 'CHN', 'CSN', 'CU', 'DN', 'EQ', 'FBD', 'FSY', 'IS', 'LV', 'MTH_IS',
-                  # 'MTH_LO', 'MTH_OAS', 'MTH_SYGB', 'MTH_SY', 'N1', 'NPT', 'NP', 'NS', 'NX', 'ONP', 'PM', 'RSY', 'SS',
-                  # 'SX', 'SYGB', 'SYN', 'SY', 'TMSY', 'UAUN', 'UE', 'USY', 'VSY', 'XQ']
-
 
 def get_UMLS_tgt(apikey):
     uri = "https://utslogin.nlm.nih.gov"
