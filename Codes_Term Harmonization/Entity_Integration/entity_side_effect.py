@@ -1,10 +1,3 @@
-"""
-_*_ coding: utf-8 _*_
-@ Author: Yu Hou
-@File: side_effect.py
-@Time: 4/12/21 5:31 PM
-"""
-
 import pandas as pd
 
 folder = '/Users/yuhou/Documents/Knowledge_Graph/knowledge_bases_integration/stage_4/'
