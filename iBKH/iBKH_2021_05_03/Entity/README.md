@@ -1,7 +1,7 @@
 ## Download iBKH entities
-To access the entity vocabulary in the iBKH, you can directly download the iBKH entities by the following link.
+To access the entity vocabulary in the iBKH, you can directly download the iBKH entities using the following link.
 ```
-https://wcm.box.com/s/gagu6yj2toyk4kirb6hpsb1qu4dm203p
+https://drive.google.com/drive/folders/10mpvyHbRhhsrylw2o3xToT8RihvSWIA4?usp=sharing
 ```
 
 When you unzip the file, you will get the following .csv files.
